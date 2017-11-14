@@ -6,7 +6,7 @@ from random import randint
 
 def main():
     """Run main Function."""
-    if(len(sys.argv) < 3):
+    if (len(sys.argv) < 3):
         print('Usage : python client.py hostname port')
         sys.exit()
 
@@ -65,8 +65,8 @@ def has_ACK(ACK, rcvpkt):
 def isDuplicate(rcvpkt, rcvpktLast):
     """Print different message if duplicate packet or not."""
     if rcvpkt == rcvpktLast:
-        print('Receiver just correctly received a duplicated message:'
-              + rcvpkt)
+        print('Receiver just correctly received a duplicated message:' +
+              rcvpkt)
     else:
         print('Receiver just correctly received a message: ' + rcvpkt)
 
@@ -74,8 +74,8 @@ def isDuplicate(rcvpkt, rcvpktLast):
 def naughty_reciever(s, ACK):
     """Naughty receiver functionality from the assignment."""
     print('How do you respond?')
-    print('(1) send a correct ACK; (2) send a corrupted ACK;'
-          + ' (3) do not send ACK; (4) send a wrong ACK')
+    print('(1) send a correct ACK; (2) send a corrupted ACK;' +
+          ' (3) do not send ACK; (4) send a wrong ACK')
     choice = randint(1, 4)
 
     if choice == 1:

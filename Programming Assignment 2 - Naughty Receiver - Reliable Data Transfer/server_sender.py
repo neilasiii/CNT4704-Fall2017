@@ -10,8 +10,10 @@ serverPort = 50019
 buffer = 2048
 clientSocket = socket(AF_INET, SOCK_STREAM)
 
-data = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
-        'Saturday']
+data = [
+    'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
+    'Saturday'
+]
 
 
 def main():
