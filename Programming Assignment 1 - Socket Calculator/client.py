@@ -3,7 +3,9 @@ Created on Oct 9, 2017
 
 @author: Neil Stagner III
 '''
-import socket, select, sys
+import select
+import socket
+import sys
 
 if __name__ == "__main__":
 
@@ -17,7 +19,7 @@ if __name__ == "__main__":
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.settimeout(2)
 
-    #connect to remote host
+    # connect to remote host
     try:
         s.connect((host, port))
     except:
@@ -34,7 +36,7 @@ if __name__ == "__main__":
             socket_list, [], [])
 
         for sock in read_sockets:
-            #incoming message from server
+            # incoming message from server
             if sock == s:
                 data = sock.recv(4096)
                 if not data:

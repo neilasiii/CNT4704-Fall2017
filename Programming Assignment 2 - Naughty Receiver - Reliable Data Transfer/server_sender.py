@@ -2,8 +2,8 @@
 
 import socket
 import sys
-from socket import AF_INET, SOCK_STREAM, timeout
 from concurrent.futures import TimeoutError
+from socket import AF_INET, SOCK_STREAM, timeout
 
 serverName = 'localhost'
 serverPort = 50019
