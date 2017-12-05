@@ -22,7 +22,7 @@ if __name__ == "__main__":
     # connect to remote host
     try:
         s.connect((host, port))
-    except:
+    except socket.error:
         print "Unable to connect"
         sys.exit()
 

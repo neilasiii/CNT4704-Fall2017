@@ -11,7 +11,7 @@ import sys
 
 def mathValidator(data):
     # found pattern to match at
-    #https://stackoverflow.com/questions/34244782/check-whether-an-expression-is-valid-using-regex-in-python
+    # https://stackoverflow.com/questions/34244782/check-whether-an-expression-is-valid-using-regex-in-python
     if re.match("^\s*[+-]?\s*(?:\d+(?:\.\d*)?|\.\d+)(?:\s*[-+/*]\s*\s*[+-]?\s".
                 "*(?:\d+(?:\.\d*)?|\.\d+))*\s*$", data):
         return True
@@ -49,14 +49,17 @@ if __name__ == "__main__":
                     data = sock.recv(BUFFER_SIZE)
                     if data:
                         if mathValidator(data):
-                            print 'Received question:',data,'Send back answer:', eval(data)
+                            print 'Received question:', data, 'Send back'.
+                            ' answer:', eval(data)
                             newdata = eval(data)
                             sock.send(str(newdata))
                         else:
-                            sock.send('Invalid question! Please enter the math question again.')
+                            sock.send('Invalid question! Please enter the '.
+                                      'math question again.')
 
-                except:
-                    print'\n\nServer program ends (due to the client closes the connection)'
+                except socket.error:
+                    print('\n\nServer program ends (due to the client closes'.
+                          ' the connection)')
                     sock.close()
                     CONNECTION_LIST.remove(sock)
                     sys.exit()
